@@ -1,9 +1,4 @@
 function solution(todo_list, finished) {
-    let answer = [];
-    for(let i = 0; i<todo_list.length; i++){
-        if(!finished[i]) {
-            answer.push(todo_list[i])
-        }
-    }
-    return answer
+    const newTodo = todo_list.filter(item => item === true)
+    return newTodo.some(newTodo)
 }
