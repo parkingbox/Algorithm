@@ -1,5 +1,5 @@
 function solution(n) {
-    let answer = n.toString().split('').map(ans => parseInt(ans));
+    return n.toString().split('').map(item => Number(item))
+        .reduce((acc, cur) => acc + cur);
     
-    return answer.reduce((acc, cur) => acc + cur);
 }
