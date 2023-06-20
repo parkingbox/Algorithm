@@ -1,14 +1,7 @@
-const makePersonalFood = (eachFood) => {
-    return parseInt(eachFood / 2);
-};
-
 function solution(food) {
-    return food.map(makePersonalFood).reverse().reduce((acc, cur, idx) => {
-        if (cur === 0) return acc;
-        
-        const calorie = food.length - idx - 1;
-        
-        acc = acc.padEnd(cur + acc.length, calorie);
-        return acc.padStart(cur + acc.length, calorie);
-    }, '0')
+    let answer = '';
+    for (let i = 1; i < food.length; i++) {
+        answer = answer + String(i).repeat(Math.floor(food[i] / 2));
+    }
+    return answer + '0' + Array.from(answer).reverse().join('')
 }
